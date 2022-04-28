@@ -3,12 +3,12 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url: 
-      defaultZone: http://192.168.0.113:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 spring: 
   boot: 
     admin: 
       client: 
         url: 
-          - http://192.168.0.113:8761/admin
+          - http:/localhost:8761/admin
     zipkin: 
       base-url: http://localhost:9411
