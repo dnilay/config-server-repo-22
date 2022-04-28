@@ -1,12 +1,17 @@
 eureka:
   client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 spring:
   boot:
     admin:
       client:
         url:
-        - http://localhost:5000
+        - http://admin:admin@localhost:8761/admin
+    zipkin:
+      base-url: http://localhost:9411
